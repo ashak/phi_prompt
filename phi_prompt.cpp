@@ -603,7 +603,7 @@ byte render_list(phi_prompt_struct* para)
   {
     _first_item=para->low.i-item_per_screen/2;
     if (_first_item>127) _first_item=0;
-    else if (para->low.i-item_per_screen/2+item_per_screen>para->high.i) _first_item=para->high.i+1-item_per_screen;
+    else if ((para->high.i+1>=item_per_screen) && (para->low.i-item_per_screen/2+item_per_screen>para->high.i)) _first_item=para->high.i+1-item_per_screen;
   }
   else
   {
